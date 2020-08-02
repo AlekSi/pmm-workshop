@@ -5,16 +5,18 @@ services:
   pmm-server:
     image: percona/pmm-server:2.9.0
     container_name: pmm-server
+    hostname: pmm-server
     ports:
       - 127.0.0.1:80:80
-      - 127.0.0.1:443:443
     environment:
       - DISABLE_UPDATES=1
+      - METRICS_RESOLUTION_MR=5s
       # - PMM_DEBUG=1
 
   pmm-client:
     image: perconalab/pmm-client:dev-latest
     container_name: pmm-client
+    hostname: pmm-client
     environment:
       - PMM_AGENT_SETUP=true
       - PMM_AGENT_SETUP_FORCE=true
