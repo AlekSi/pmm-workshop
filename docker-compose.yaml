@@ -3,7 +3,7 @@ version: "3.7"
 
 services:
   pmm-server:
-    image: percona/pmm-server:2.9.0
+    image: percona/pmm-server:2.9.1
     container_name: pmm-server
     hostname: pmm-server
     ports:
@@ -14,7 +14,7 @@ services:
       # - PMM_DEBUG=1
 
   pmm-client:
-    image: perconalab/pmm-client:dev-latest
+    image: perconalab/pmm-client:2.9.1
     container_name: pmm-client
     hostname: pmm-client
     environment:
