@@ -14,7 +14,8 @@ docker-compose up pmm-client
 
 Add host computer into PMM Server's inventory and get Node ID:
 ```bash
-docker exec -it pmm-client pmm-admin inventory add node generic --address=host.docker.internal host
+docker exec -it pmm-client pmm-admin inventory add node generic \
+    --address=host.docker.internal host
 ```
 
 Add external Service running on the host computer (replace `<HOST NODE ID>` with Node ID from the previous step):
